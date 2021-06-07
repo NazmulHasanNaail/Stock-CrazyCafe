@@ -133,6 +133,17 @@ function stock_crazycafe_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer widgets', 'stock-crazycafe' ),
+			'id'            => 'stock-footer',
+			'description'   => esc_html__( 'Add widgets here.', 'stock-crazycafe' ),
+			'before_widget' => '<div class="col-md-3"><div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div></div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
 }
 add_action( 'widgets_init', 'stock_crazycafe_widgets_init' );
 
@@ -140,10 +151,14 @@ add_action( 'widgets_init', 'stock_crazycafe_widgets_init' );
  * Enqueue scripts and styles.
  */
 function stock_crazycafe_scripts() {
+	wp_enqueue_style( 'stock-default-', get_template_directory_uri().'/assets/css/default.css', array(), '1.0.0' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri().'/assets/css/all.min.css', array(), '5.0.0' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.css', array(),'4.0.0' );
 	wp_enqueue_style( 'stock-crazycafe-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'stock-crazycafe-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'stock-crazycafe-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery'), '4.0.0', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() .'/assets/js/bootstrap.min.js', array(), '4.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

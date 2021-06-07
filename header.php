@@ -23,37 +23,48 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'stock-crazycafe' ); ?></a>
+	<div class="header-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="site-logo">
+						<h2><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h2>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="header-right-content">
+						<a  href="mailto:contact@stock.com" class="stock-contact-box">
+							<i class="fa fa-envelope"></i>
+							Send us an email
+							<h3>contact@stock.com</h3>
+						</a>
+						<div class="stock-contact-box">
+							<i class="fa fa-phone"></i>
+							Give us a call
+							<h3>+014-547-0354</h3>
+						</div>
+						<a  href="mailto:contact@stock.com" class="stock-contact-box">
+							<i class="fa fa-map-marker"></i>
+							Send us an email
+							<h3>contact@stock.com</h3>
+						</a>	
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$stock_crazycafe_description = get_bloginfo( 'description', 'display' );
-			if ( $stock_crazycafe_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $stock_crazycafe_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+						
+						<a href="" class="stock-cart"><i class="fa fa-shopping-cart"></i><span class="stock-cart-count">3</span></a>
+					</div>
+				</div>
+			</div>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'stock-crazycafe' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="mainmenu">
+						<?php wp_nav_menu(array(
+							'theme_location' => 'menu-1',
+							 'menu-id' => 'primary-menu',
+							 )); ?>
+					</div>
+				</div>
+			</div>
+		</div><!---container--->
+	</div><!--header-area-->
+
