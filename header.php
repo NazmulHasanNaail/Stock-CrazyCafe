@@ -45,8 +45,8 @@
 						</div>
 						<a  href="mailto:contact@stock.com" class="stock-contact-box">
 							<i class="fa fa-map-marker"></i>
-							Send us an email
-							<h3>contact@stock.com</h3>
+							We are open
+							<h3>Mon - Fri, 9am - 6pm</h3>
 						</a>	
 
 						

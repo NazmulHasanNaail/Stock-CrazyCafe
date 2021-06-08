@@ -32,9 +32,9 @@
 							<div class="col-md-4">
 								<div class="social-icons">
 									<a href="#"><i class="fab fa-facebook-f"></i></a>
-									<a href="#"><i class="fa fab-twitter"></i></a>
-									<a href="#"><i class="fa fab-linkedin"></i></a>
-									<a href="#"><i class="fa fab-youtube"></i></a>
+									<a href="#"><i class="fab fa-twitter"></i></a>
+									<a href="#"><i class="fab fa-linkedin"></i></a>
+									<a href="#"><i class="fab fa-youtube"></i></a>
 								</div>
 							</div>
 						</div>
