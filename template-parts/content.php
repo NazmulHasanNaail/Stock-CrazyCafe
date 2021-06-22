@@ -29,6 +29,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+
 	<?php stock_crazycafe_post_thumbnail(); ?>
 
 	<div class="entry-content">

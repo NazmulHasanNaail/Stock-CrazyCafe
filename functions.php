@@ -193,3 +193,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Cs-Option And Metaboxes.
+ */
+require get_template_directory() . '/inc/cs-framework/cs-framework.php';
+

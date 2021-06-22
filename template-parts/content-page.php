@@ -7,17 +7,36 @@
  * @package Stock
  */
 
+if(get_post_meta($post->ID, 'stock_page_options', true)){
+	$page_meta = get_post_meta($post->ID, 'stock_page_options', true);
+}else{
+	$page_meta = [];
+}
+
+if(array_key_exists('stock_page_title', $page_meta)){
+	$enable_title = $page_meta['stock_page_title'];
+}else{
+	$enable_title = true;
+}
+if(array_key_exists('stock_page_content', $page_meta)){
+	$enable_content = $page_meta['stock_page_content'];
+}else{
+	$enable_content = false;
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if($enable_title == true): ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
+	<?php endif; ?>
+	
 	<?php stock_crazycafe_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
+		if($enable_content==true):
 		the_content();
 
 		wp_link_pages(
@@ -26,6 +45,7 @@
 				'after'  => '</div>',
 			)
 		);
+	endif;
 		?>
 	</div><!-- .entry-content -->
 
